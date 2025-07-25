@@ -1,27 +1,29 @@
 //Crear una petición HTTP solicitando datos a un server url: "https://jsonplaceholder.typicode.com/todos/1";
 //Crear una petición HTTP enviando datos a un server url: "https://jsonplaceholder.typicode.com/todos/";
 
-//1.GET HTTP Request Example
-
-// async function getRequestExample() {
+//1. HTTP Request GET
+// let getRequestExample = async () => {
 //   try {
-//     const url = "https://jsonplaceholder.typicode.com/todos/1";
-//     const optionsObject = {
+//     let url = "https://jsonplaceholder.typicode.com/todos/1";
+//     let optionsObject = {
 //       method: 'GET',
 //       headers: {
-//         'Authorization': 'BearertokenExample'
+//         'Authorization': 'Bearer token',
 //       }
 //     }
-//     const response = await fetch(url, optionsObject);
+
+//     let response = await fetch(url, optionsObject);
 //     if (!response.ok) {
-//       throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
+//       throw new Error(`HTTP Error, ${response.status} ${response.statusText}`);
 //     }
-//     const data = response.json();
-//     return data
+
+//     let data = await response.json();
+//     return data;
 //   } catch (error) {
 //     throw error
 //   }
 // }
+
 
 // getRequestExample()
 //   .then((resolveValue) => {
@@ -29,6 +31,8 @@
 //   }).catch((err) => {
 //     console.log(`Failed request, reason: `, err);
 //   })
+
+
 
 
 //2.POST HTTP Request Example
@@ -69,4 +73,3 @@ HTTPRequestPOSTExample()
   .catch((error) => {  //Este catch captura cualquiera de las 2 promesas rechazadas en la función asincrona, error que de hecho previamente ya fue capturado por el catch del bloque try-catch dentro de la función asíncrona
     console.log("HTTP Request rejected, reason => ", error);
   })
-
